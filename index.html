@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chào mừng Quốc khánh 2-9</title>
+    <link href="1.png" rel="icon">
+    <link href="1.png" rel="apple-touch-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('14.jpg'); /* Thay thế bằng tên tệp ảnh của bạn */
+            background-size: cover; /* Đảm bảo hình ảnh bao phủ toàn bộ nền */
+            background-position: center; /* Căn giữa hình ảnh */
+            color: rgb(255, 255, 255); /* Màu chữ mặc định trắng */
+            overflow: hidden;
+            position: relative;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Lớp phủ mờ */
+            z-index: 1; /* Đặt lớp phủ dưới nội dung chính */
+        }
+        .container {
+            text-align: center;
+            z-index: 10;
+            animation: fadeIn 2s ease-in;
+            transform: translateX(10px); /* Di chuyển container qua phải */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 0.5em;
+            color: #F0F0F0; /* Trắng đậm */
+            font-weight: 700; /* Chữ đậm hơn */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Bóng chữ mờ hơn để dễ đọc */
+            animation: textGlow 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes textGlow {
+            from { text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); }
+            to { text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5); }
+        }
+        p {
+            font-size: 1.8em;
+            color: #F0F0F0; /* Trắng đậm */
+            font-weight: 700; /* Chữ đậm hơn */
+            animation: moveUp 2s ease-in-out infinite alternate;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Bóng chữ mờ hơn để dễ đọc */
+        }
+        @keyframes moveUp {
+            from { transform: translateY(5px); }
+            to { transform: translateY(-5px); }
+        }
+        .flag-img {
+            width: 200px;
+            height: auto;
+            margin: 0 auto 20px;
+            animation: flagWave 3s ease-in-out infinite;
+            transform: translateX(10px); /* Di chuyển lá cờ qua phải */
+        }
+        @keyframes flagWave {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .button {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            padding: 12px 24px;
+            margin-top: 20px;
+            background-color: #DA251D; /* Màu nền đỏ của cờ Việt Nam */
+            color: #ffee00; /* Trắng đậm để hài hòa với nền đỏ */
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            border: 2px solid #DA251D; /* Đường viền màu đỏ của cờ Việt Nam */
+            transform: translateX(10px); /* Di chuyển nút qua phải */
+        }
+        .button:hover {
+            background-color: #C8102E; /* Màu đỏ đậm khi hover */
+        }
+        .button span {
+            position: relative;
+            z-index: 2;
+            font-weight: 700; /* Chữ đậm hơn */
+        }
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0; /* Vị trí dòng chữ chạy ở trên cùng của trang */
+            left: 0;
+            background-color: #DA251D; /* Nền đỏ */
+            color: #ffee00; /* Trắng đậm */
+            font-size: 1.5em; /* Kích thước chữ lớn hơn */
+            font-weight: 500; /* Chữ đậm hơn */
+            padding: 1px 0;
+            text-align: center;
+            z-index: 5; /* Đảm bảo chữ chạy nằm dưới phần tử .container */
+        }
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: marquee 40s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="marquee-container">
+        <div class="marquee">Đại hội đại biểu toàn quốc lần thứ IV của Đảng tháng 12/1976 đã đánh giá: “Năm tháng sẽ trôi qua nhưng thắng lợi của nhân dân ta trong sự nghiệp chống Mỹ, cứu nước mãi mãi được ghi vào lịch sử dân tộc ta như một trong những trang chói lọi nhất, một biểu tượng sáng ngời về sự toàn thắng của chủ nghĩa anh hùng cách mạng và trí tuệ con người, và đi vào lịch sử thế giới như một chiến công vĩ đại của thế kỷ XX, một sự kiện có tầm quan trọng quốc tế to lớn và có tính thời đại sâu sắc.</div>
+    </div>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/320px-Flag_of_Vietnam.svg.png" alt="Quốc kỳ Việt Nam" class="flag-img">
+        <h1>Chào mừng Quốc khánh 2-9</h1>
+        <p>Chúc mừng ngày lễ Quốc khánh Việt Nam!</p>
+        <a href="https://admin2eqw.github.io/2-9-ch-nh/" class="button"><span>Bắt đầu</span></a>
+    </div>
+</body>
+</html>
